@@ -1,0 +1,38 @@
+html, body, #clock {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #293B29;
+}
+
+#clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hour_hand, 
+#second_hand, 
+#minute_hand{
+    position: absolute;
+
+}
+
+#hour_hand{
+    transform: rotate(90deg) translateX(-36px);
+    z-index: 9;
+}
+
+#minute_hand{
+    transform: translateY(-48px);
+    z-index: 8;
+}
+
+#second_hand{
+    transform: rotate(180deg) translateY(64px);
+    z-index: 8;
+}

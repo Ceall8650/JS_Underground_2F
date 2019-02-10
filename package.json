@@ -1,0 +1,19 @@
+{
+  "name": "JS_Underground_2F",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ceall8650/JS_Underground_2F.git",
+  "homepage": "https://ceall8650.github.io/JS_Underground_2F/",
+  "author": "Ceall Shih <ceall8650@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "deploy": "yarn run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.8",
+    "node-sass": "^4.11.0",
+    "sass": "^1.17.0"
+  }
+}
