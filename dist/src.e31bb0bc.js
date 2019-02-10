@@ -202,9 +202,9 @@ function getPMHour(hour) {
   return hour - 12;
 }
 
-function setHourAngle(hour) {
+function setHourAngle(hour, minute) {
   var perHourAngle = 360 / 12;
-  var rotateAngle = hour * perHourAngle;
+  var rotateAngle = hour * perHourAngle + minute / 60 * perHourAngle;
   hour_hand.style.transform = "rotate(".concat(rotateAngle + 90, "deg) translateX(-36px)");
 }
 
@@ -227,7 +227,7 @@ function tick() {
   var minute = d.getMinutes();
   var second = d.getSeconds();
   if (hour >= 12) hour = getPMHour(hour);
-  setHourAngle(hour);
+  setHourAngle(hour, minute);
   setMinuteAngel(minute);
   setSecondAngle(second);
   console.log(hour, minute, second);
@@ -261,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2729" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9610" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

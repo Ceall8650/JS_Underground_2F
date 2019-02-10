@@ -9,9 +9,9 @@ function getPMHour(hour) {
     return hour - 12;
 }
 
-function setHourAngle(hour) {
+function setHourAngle(hour, minute) {
     let perHourAngle = 360/12;
-    let rotateAngle = hour * perHourAngle ;
+    let rotateAngle = (hour * perHourAngle) + ((minute / 60) *  perHourAngle) ;
     hour_hand.style.transform = `rotate(${rotateAngle + 90}deg) translateX(-36px)`;
 }
 
@@ -36,7 +36,7 @@ function tick() {
     
     if(hour >= 12) hour = getPMHour(hour);
     
-    setHourAngle(hour);
+    setHourAngle(hour, minute);
     setMinuteAngel(minute);
     setSecondAngle(second);
     
